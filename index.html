@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Soporte TI e Infraestructura</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #2563eb;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --text-light: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .card ul li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .contact-section {
+            background: var(--card-bg);
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sistemas FRC.com</h1>
+        <p>Infraestructura, redes, mantenimiento y analítica de datos</p>
+    </header>
+
+    <div class="container">
+        <h2 style="text-align: center; color: var(--primary);">Servicios Profesionales</h2>
+        
+        <div class="services-grid">
+            <div class="card">
+                <h3>Soporte Técnico & Sistemas</h3>
+                <ul>
+                    <li>Mantenimiento preventivo y correctivo de hardware</li>
+                    <li>Optimización y restauración de sistemas operativos</li>
+                    <li>Diagnóstico de rendimiento y actualización de componentes</li>
+                    <li>Soporte a periféricos e impresoras</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Redes e Infraestructura</h3>
+                <ul>
+                    <li>Configuración y administración de redes locales (VLANs, DHCP)</li>
+                    <li>Implementación de firewalls y seguridad perimetral</li>
+                    <li>Administración de servidores y virtualización</li>
+                    <li>Monitoreo de disponibilidad y sintéticos</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Análisis de Datos & Reportes</h3>
+                <ul>
+                    <li>Diseño de dashboards interactivos en Power BI</li>
+                    <li>Modelado de datos y métricas dinámicas (DAX)</li>
+                    <li>Automatización de procesos con scripts personalizados</li>
+                    <li>Integración y limpieza de orígenes de datos</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>¿Necesitas asesoría o soporte?</h2>
+            <p>Contáctame para evaluar los requerimientos de tu infraestructura o proyecto.</p>
+            <a href="mailto:fabiorodriguez@outlook.com" class="btn">Enviar un correo</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Sistemas FRC.com</p>
+    </footer>
+
+</body>
+</html>
