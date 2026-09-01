@@ -6,12 +6,11 @@
     <title>Sistemas FRC | Soluciones Tecnológicas</title>
     <style>
         :root {
-            --bg-body: #f4f5f7;
-            --text-dark: #111827;
-            --text-muted: #4b5563;
+            --bg-body: #f1f5f9;
+            --text-dark: #1e293b;
+            --text-muted: #475569;
             --card-bg: #ffffff;
-            --whatsapp-green: #25d366;
-            --whatsapp-hover: #1eaa53;
+            --whatsapp-dark: #111827;
         }
 
         * {
@@ -30,58 +29,56 @@
             min-height: 100vh;
         }
 
-        /* --- Mosaico de Bloques Exacto del Flyer --- */
+        /* --- Mosaico de 2 Filas --- */
         .mosaic-grid {
             display: grid;
-            grid-template-columns: repeat(18, 1fr);
-            gap: 2px;
+            grid-template-columns: repeat(16, 1fr);
+            gap: 4px;
             background-color: #ffffff;
-            padding: 4px;
+            padding: 8px 10px;
             width: 100%;
         }
 
         .mosaic-grid div {
             aspect-ratio: 1;
-            border-radius: 1px;
+            border-radius: 4px;
         }
 
-        /* Colores Fila 1 (Intensos) */
-        .c-dk1 { background-color: #2b2b2b; }
-        .c-dk2 { background-color: #3b3b3b; }
-        .c-dk3 { background-color: #4b4b4b; }
-        .c-rd1 { background-color: #ef4444; }
-        .c-rd2 { background-color: #dc2626; }
-        .c-rd3 { background-color: #b91c1c; }
-        .c-bl1 { background-color: #3b82f6; }
-        .c-bl2 { background-color: #2563eb; }
-        .c-bl3 { background-color: #1d4ed8; }
-        .c-pr1 { background-color: #4338ca; }
-        .c-pr2 { background-color: #3730a3; }
-        .c-pr3 { background-color: #312e81; }
-        .c-gy1 { background-color: #6b7280; }
-        .c-gy2 { background-color: #4b5563; }
-        .c-gy3 { background-color: #374151; }
+        /* Paleta Fila 1 (Medios / Pastel Suaves) */
+        .m-1 { background-color: #a3b899; }
+        .m-2 { background-color: #9cb3a8; }
+        .m-3 { background-color: #97bdad; }
+        .m-4 { background-color: #e8a598; }
+        .m-5 { background-color: #f2a2a2; }
+        .m-6 { background-color: #99b8f1; }
+        .m-7 { background-color: #8faef3; }
+        .m-8 { background-color: #90a5f4; }
+        .m-9 { background-color: #9e9be0; }
+        .m-10 { background-color: #9b8ccf; }
+        .m-11 { background-color: #a894c2; }
+        .m-12 { background-color: #af9fb5; }
+        .m-13 { background-color: #bfaab3; }
+        .m-14 { background-color: #a3a3a3; }
+        .m-15 { background-color: #8c8c8c; }
+        .m-16 { background-color: #787878; }
 
-        /* Colores Fila 2 (Medios / Suaves) */
-        .c-m-gy1 { background-color: #9ca3af; }
-        .c-m-gy2 { background-color: #a1a1aa; }
-        .c-m-gy3 { background-color: #b45309; opacity: 0.3; }
-        .c-m-rd1 { background-color: #fca5a5; }
-        .c-m-rd2 { background-color: #f87171; }
-        .c-m-rd3 { background-color: #ef4444; opacity: 0.6; }
-        .c-m-bl1 { background-color: #93c5fd; }
-        .c-m-bl2 { background-color: #60a5fa; }
-        .c-m-bl3 { background-color: #818cf8; }
-        .c-m-pr1 { background-color: #a5b4fc; }
-        .c-m-pr2 { background-color: #818cf8; }
-        .c-m-pr3 { background-color: #c084fc; }
-        .c-m-gy4 { background-color: #d1d5db; }
-
-        /* Colores Fila 3 (Pastel / Claros) */
-        .c-l-gy { background-color: #f3f4f6; }
-        .c-l-rd { background-color: #fee2e2; }
-        .c-l-bl { background-color: #dbeafe; }
-        .c-l-pr { background-color: #e0e7ff; }
+        /* Paleta Fila 2 (Pastel Claro / Transiciones) */
+        .m-17 { background-color: #cbe3db; }
+        .m-18 { background-color: #d1e8e2; }
+        .m-19 { background-color: #fce1e1; }
+        .m-20 { background-color: #fcd5d5; }
+        .m-21 { background-color: #cddcfc; }
+        .m-22 { background-color: #c7d5fb; }
+        .m-23 { background-color: #cad5fd; }
+        .m-24 { background-color: #d3d1f8; }
+        .m-25 { background-color: #d1c8f1; }
+        .m-26 { background-color: #d8cde9; }
+        .m-27 { background-color: #dcd3e3; }
+        .m-28 { background-color: #e5dae0; }
+        .m-29 { background-color: #d9d9d9; }
+        .m-30 { background-color: #c7c7c7; }
+        .m-31 { background-color: #b5b5b5; }
+        .m-32 { background-color: #a1a1a1; }
 
         /* Mosaico Invertido para el Footer */
         .mosaic-grid.inverted {
@@ -91,7 +88,7 @@
         /* --- Header --- */
         header {
             background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
         }
 
         .header-main {
@@ -105,14 +102,8 @@
             flex-wrap: wrap;
         }
 
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
         .logo-img {
-            max-height: 90px;
+            max-height: 95px;
             width: auto;
             object-fit: contain;
         }
@@ -121,13 +112,13 @@
             font-size: 2.2rem;
             font-weight: 800;
             color: var(--text-dark);
-            letter-spacing: -0.5px;
+            line-height: 1.2;
         }
 
         .header-title p {
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 700;
-            color: #1f2937;
+            color: #1e293b;
         }
 
         /* --- Contenedor Principal --- */
@@ -141,93 +132,91 @@
             padding: 2.5rem 1.5rem;
         }
 
-        /* --- Grid de Servicios --- */
-        .services-grid {
+        /* --- Layout de Servicios --- */
+        .main-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
             margin-bottom: 3rem;
+        }
+
+        .hero-img-container {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .services-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
         }
 
         .card {
             background: var(--card-bg);
             border-radius: 12px;
-            padding: 1.75rem;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            padding: 1.25rem 1.5rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.08);
         }
 
         .card-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #f3f4f6;
-            padding-bottom: 0.75rem;
-        }
-
-        .card-title-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 0.5rem;
         }
 
         .card h3 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 800;
             color: var(--text-dark);
         }
 
         .card-icon {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
         }
 
-        .card ul {
-            list-style: none;
-        }
-
-        .card ul li {
-            position: relative;
-            padding-left: 1.25rem;
-            margin-bottom: 0.6rem;
+        .card p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.98rem;
             font-weight: 500;
         }
 
-        .card ul li::before {
-            content: "•";
-            color: #2563eb;
-            font-weight: bold;
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
-            top: -2px;
-        }
-
-        /* --- Banner Inferior / Sistemas Compatibles --- */
+        /* --- Banner Tecnologías --- */
         .tech-banner {
             background: #ffffff;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.25rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 2.5rem;
             flex-wrap: wrap;
-            border: 1px solid #e5e7eb;
-            margin-bottom: 3rem;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2.5rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .tech-badge {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -235,20 +224,20 @@
             color: var(--text-dark);
         }
 
-        /* --- Banner de Contacto WhatsApp --- */
+        /* --- Llamado a la Acción --- */
         .cta-banner {
             background: #ffffff;
             border-radius: 16px;
             padding: 2.5rem 2rem;
             text-align: center;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.05);
         }
 
         .cta-banner h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             color: var(--text-dark);
         }
 
@@ -257,22 +246,21 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            background-color: var(--whatsapp-green);
+            background-color: var(--whatsapp-dark);
             color: #ffffff;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            padding: 1rem 2.5rem;
+            padding: 1rem 2.8rem;
             border-radius: 50px;
             text-decoration: none;
-            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
             transition: all 0.2s ease;
-            margin-top: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .btn-whatsapp:hover {
-            background-color: var(--whatsapp-hover);
+            background-color: #1f2937;
             transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
         }
 
         /* --- Footer --- */
@@ -289,20 +277,23 @@
             font-weight: 600;
         }
 
-        /* Responsivo para celulares */
+        /* Responsivo en dispositivos móviles */
+        @media (max-width: 850px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 640px) {
             .mosaic-grid {
-                grid-template-columns: repeat(9, 1fr);
+                grid-template-columns: repeat(8, 1fr);
             }
             .header-main {
                 flex-direction: column;
                 text-align: center;
             }
-            .brand-container {
-                flex-direction: column;
-            }
             .btn-whatsapp {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
                 padding: 0.8rem 1.8rem;
                 width: 100%;
             }
@@ -311,38 +302,24 @@
 </head>
 <body>
 
-    <!-- Encabezado con Cuadrícula Superior Mosaico -->
+    <!-- Encabezado con 2 Filas de Mosaico -->
     <header>
         <div class="mosaic-grid">
-            <!-- Fila 1 (Oscuros / Rojos / Azules / Púrpuras / Grises) -->
-            <div class="c-dk1"></div><div class="c-dk2"></div><div class="c-dk3"></div>
-            <div class="c-rd1"></div><div class="c-rd2"></div><div class="c-rd3"></div>
-            <div class="c-bl1"></div><div class="c-bl2"></div><div class="c-bl3"></div>
-            <div class="c-pr1"></div><div class="c-pr2"></div><div class="c-pr3"></div>
-            <div class="c-gy1"></div><div class="c-gy2"></div><div class="c-gy3"></div>
-            <div class="c-dk1"></div><div class="c-dk2"></div><div class="c-rd1"></div>
+            <!-- Fila 1 -->
+            <div class="m-1"></div><div class="m-2"></div><div class="m-3"></div><div class="m-4"></div>
+            <div class="m-5"></div><div class="m-6"></div><div class="m-7"></div><div class="m-8"></div>
+            <div class="m-9"></div><div class="m-10"></div><div class="m-11"></div><div class="m-12"></div>
+            <div class="m-13"></div><div class="m-14"></div><div class="m-15"></div><div class="m-16"></div>
 
-            <!-- Fila 2 (Medios / Transición) -->
-            <div class="c-m-gy1"></div><div class="c-m-gy2"></div><div class="c-m-gy3"></div>
-            <div class="c-m-rd1"></div><div class="c-m-rd2"></div><div class="c-m-rd3"></div>
-            <div class="c-m-bl1"></div><div class="c-m-bl2"></div><div class="c-m-bl3"></div>
-            <div class="c-m-pr1"></div><div class="c-m-pr2"></div><div class="c-m-pr3"></div>
-            <div class="c-m-gy4"></div><div class="c-m-gy1"></div><div class="c-m-gy2"></div>
-            <div class="c-m-gy3"></div><div class="c-m-rd1"></div><div class="c-m-bl1"></div>
-
-            <!-- Fila 3 (Claros / Pastel) -->
-            <div class="c-l-gy"></div><div class="c-l-gy"></div><div class="c-l-gy"></div>
-            <div class="c-l-rd"></div><div class="c-l-rd"></div><div class="c-l-rd"></div>
-            <div class="c-l-bl"></div><div class="c-l-bl"></div><div class="c-l-bl"></div>
-            <div class="c-l-pr"></div><div class="c-l-pr"></div><div class="c-l-pr"></div>
-            <div class="c-l-gy"></div><div class="c-l-gy"></div><div class="c-l-gy"></div>
-            <div class="c-l-gy"></div><div class="c-l-rd"></div><div class="c-l-bl"></div>
+            <!-- Fila 2 -->
+            <div class="m-17"></div><div class="m-18"></div><div class="m-19"></div><div class="m-20"></div>
+            <div class="m-21"></div><div class="m-22"></div><div class="m-23"></div><div class="m-24"></div>
+            <div class="m-25"></div><div class="m-26"></div><div class="m-27"></div><div class="m-28"></div>
+            <div class="m-29"></div><div class="m-30"></div><div class="m-31"></div><div class="m-32"></div>
         </div>
 
         <div class="header-main">
-            <div class="brand-container">
-                <img src="logo.png" alt="Sistemas FRC Logo" class="logo-img" onerror="this.onerror=null; this.src='Flyer Sistemasfrc.png';">
-            </div>
+            <img src="flyer.png" alt="Sistemas FRC Logo" class="logo-img" onerror="this.onerror=null; this.src='Flyer Chibi Sistemasfrc.png';">
             <div class="header-title">
                 <p>¿Necesitas ayuda con la tecnología?</p>
             </div>
@@ -352,81 +329,61 @@
     <!-- Contenido Principal -->
     <main class="container">
 
-        <div class="services-grid">
+        <div class="main-layout">
             
-            <!-- Soporte IT -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
+            <!-- Ilustración Chibi de fondo / soporte -->
+            <div class="hero-img-container">
+                <img src="logo.png" alt="Ilustración Chibi Sistemas FRC" class="hero-img" onerror="this.style.display='none'">
+            </div>
+
+            <!-- Tarjetas de Servicios -->
+            <div class="services-stack">
+                
+                <div class="card">
+                    <div class="card-header">
                         <h3>Soporte IT</h3>
+                        <span class="card-icon">🧰</span>
                     </div>
-                    <span class="card-icon">🧰</span>
+                    <p>• Diagnóstico y reparación rápida hardware. Mantenimiento preventivo y correctivo.</p>
                 </div>
-                <ul>
-                    <li>Diagnóstico y reparación rápida de hardware.</li>
-                    <li>Mantenimiento preventivo y correctivo.</li>
-                </ul>
-            </div>
 
-            <!-- Networking -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
+                <div class="card">
+                    <div class="card-header">
                         <h3>Networking</h3>
+                        <span class="card-icon">☁️</span>
                     </div>
-                    <span class="card-icon">☁️</span>
+                    <p>• Diseño, instalación y seguridad de redes. Sistemas de videovigilancia y control.</p>
                 </div>
-                <ul>
-                    <li>Diseño, instalación y seguridad de redes.</li>
-                    <li>Sistemas de videovigilancia y control.</li>
-                </ul>
-            </div>
 
-            <!-- Admin -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
+                <div class="card">
+                    <div class="card-header">
                         <h3>Admin</h3>
+                        <span class="card-icon">🛡️</span>
                     </div>
-                    <span class="card-icon">🛡️</span>
+                    <p>• Gestión de servidores, Active Directory y copias de seguridad. Optimización del entorno IT.</p>
                 </div>
-                <ul>
-                    <li>Gestión de servidores, Active Directory y copias de seguridad.</li>
-                    <li>Optimización del entorno IT.</li>
-                </ul>
-            </div>
 
-            <!-- Data / BI -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
+                <div class="card">
+                    <div class="card-header">
                         <h3>Data/BI</h3>
+                        <span class="card-icon">💡</span>
                     </div>
-                    <span class="card-icon">💡</span>
+                    <p>• Informes avanzados en Power BI y Excel. Decisiones estratégicas basadas en datos.</p>
                 </div>
-                <ul>
-                    <li>Informes avanzados en Power BI y Excel.</li>
-                    <li>Decisiones estratégicas basadas en datos.</li>
-                </ul>
-            </div>
 
-            <!-- Cloud / y Data Center -->
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title-group">
+                <div class="card">
+                    <div class="card-header">
                         <h3>Cloud / y Data Center</h3>
+                        <span class="card-icon">💻</span>
                     </div>
-                    <span class="card-icon">💻</span>
+                    <p>• Migración, alojamiento y gestión y segura de datos. Escalabilidad y alta disponibilidad.</p>
                 </div>
-                <ul>
-                    <li>Migración, alojamiento y gestión segura de datos.</li>
-                    <li>Escalabilidad y alta disponibilidad.</li>
-                </ul>
+
             </div>
 
         </div>
 
-        <!-- Tecnologías / Ecosistema -->
+        <!-- Banner Tecnologías -->
         <div class="tech-banner">
             <div class="tech-badge">🪟 Windows</div>
             <div class="tech-badge">🐧 Linux</div>
@@ -434,7 +391,7 @@
             <div class="tech-badge">🧠 IA</div>
         </div>
 
-        <!-- Llamado a la Acción Principal -->
+        <!-- Llamado a la Acción / WhatsApp -->
         <div class="cta-banner">
             <h2>¡Soy tu aliado en Informática!</h2>
             <a href="https://wa.me/573144749916" class="btn-whatsapp" target="_blank">
@@ -444,7 +401,7 @@
 
     </main>
 
-    <!-- Pie de página con Mosaico Invertido -->
+    <!-- Pie de página con 2 Filas Mosaico Invertido -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 Sistemas FRC - Todos los derechos reservados</p>
@@ -452,28 +409,16 @@
 
         <div class="mosaic-grid inverted">
             <!-- Fila 1 -->
-            <div class="c-dk1"></div><div class="c-dk2"></div><div class="c-dk3"></div>
-            <div class="c-rd1"></div><div class="c-rd2"></div><div class="c-rd3"></div>
-            <div class="c-bl1"></div><div class="c-bl2"></div><div class="c-bl3"></div>
-            <div class="c-pr1"></div><div class="c-pr2"></div><div class="c-pr3"></div>
-            <div class="c-gy1"></div><div class="c-gy2"></div><div class="c-gy3"></div>
-            <div class="c-dk1"></div><div class="c-dk2"></div><div class="c-rd1"></div>
+            <div class="m-1"></div><div class="m-2"></div><div class="m-3"></div><div class="m-4"></div>
+            <div class="m-5"></div><div class="m-6"></div><div class="m-7"></div><div class="m-8"></div>
+            <div class="m-9"></div><div class="m-10"></div><div class="m-11"></div><div class="m-12"></div>
+            <div class="m-13"></div><div class="m-14"></div><div class="m-15"></div><div class="m-16"></div>
 
             <!-- Fila 2 -->
-            <div class="c-m-gy1"></div><div class="c-m-gy2"></div><div class="c-m-gy3"></div>
-            <div class="c-m-rd1"></div><div class="c-m-rd2"></div><div class="c-m-rd3"></div>
-            <div class="c-m-bl1"></div><div class="c-m-bl2"></div><div class="c-m-bl3"></div>
-            <div class="c-m-pr1"></div><div class="c-m-pr2"></div><div class="c-m-pr3"></div>
-            <div class="c-m-gy4"></div><div class="c-m-gy1"></div><div class="c-m-gy2"></div>
-            <div class="c-m-gy3"></div><div class="c-m-rd1"></div><div class="c-m-bl1"></div>
-
-            <!-- Fila 3 -->
-            <div class="c-l-gy"></div><div class="c-l-gy"></div><div class="c-l-gy"></div>
-            <div class="c-l-rd"></div><div class="c-l-rd"></div><div class="c-l-rd"></div>
-            <div class="c-l-bl"></div><div class="c-l-bl"></div><div class="c-l-bl"></div>
-            <div class="c-l-pr"></div><div class="c-l-pr"></div><div class="c-l-pr"></div>
-            <div class="c-l-gy"></div><div class="c-l-gy"></div><div class="c-l-gy"></div>
-            <div class="c-l-gy"></div><div class="c-l-rd"></div><div class="c-l-bl"></div>
+            <div class="m-17"></div><div class="m-18"></div><div class="m-19"></div><div class="m-20"></div>
+            <div class="m-21"></div><div class="m-22"></div><div class="m-23"></div><div class="m-24"></div>
+            <div class="m-25"></div><div class="m-26"></div><div class="m-27"></div><div class="m-28"></div>
+            <div class="m-29"></div><div class="m-30"></div><div class="m-31"></div><div class="m-32"></div>
         </div>
     </footer>
 
