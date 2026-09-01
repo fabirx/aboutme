@@ -3,158 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistemas FRC | Soporte TI e Infraestructura</title>
+    <title>Sistemas FRC | Soluciones Tecnológicas</title>
     <style>
         :root {
-            /* Paleta Suave / Pastel Tech */
-            --bg-gradient: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
-            --header-gradient: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #7c3aed 100%);
+            --bg-body: #f4f5f7;
+            --text-dark: #111827;
+            --text-muted: #4b5563;
             --card-bg: #ffffff;
-            --primary-text: #1e293b;
-            --secondary-text: #64748b;
-            --accent-blue: #3b82f6;
-            --accent-purple: #8b5cf6;
-            --badge-bg: #eff6ff;
-            --badge-text: #1d4ed8;
+            --whatsapp-green: #25d366;
+            --whatsapp-hover: #1eaa53;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background: var(--bg-gradient);
-            color: var(--primary-text);
-            line-height: 1.6;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
             min-height: 100vh;
         }
 
-        /* --- Header Dinámico --- */
-        header {
-            position: relative;
-            background: var(--header-gradient);
-            color: #ffffff;
-            padding: 4rem 1.5rem 3.5rem;
-            text-align: center;
-            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
-            animation: fadeInDown 0.8s ease-out;
+        /* --- Mosaico de Bloques Exacto del Flyer --- */
+        .mosaic-grid {
+            display: grid;
+            grid-template-columns: repeat(18, 1fr);
+            gap: 2px;
+            background-color: #ffffff;
+            padding: 4px;
+            width: 100%;
         }
 
-        .header-content {
-            max-width: 800px;
+        .mosaic-grid div {
+            aspect-ratio: 1;
+            border-radius: 1px;
+        }
+
+        /* Colores Fila 1 (Intensos) */
+        .c-dk1 { background-color: #2b2b2b; }
+        .c-dk2 { background-color: #3b3b3b; }
+        .c-dk3 { background-color: #4b4b4b; }
+        .c-rd1 { background-color: #ef4444; }
+        .c-rd2 { background-color: #dc2626; }
+        .c-rd3 { background-color: #b91c1c; }
+        .c-bl1 { background-color: #3b82f6; }
+        .c-bl2 { background-color: #2563eb; }
+        .c-bl3 { background-color: #1d4ed8; }
+        .c-pr1 { background-color: #4338ca; }
+        .c-pr2 { background-color: #3730a3; }
+        .c-pr3 { background-color: #312e81; }
+        .c-gy1 { background-color: #6b7280; }
+        .c-gy2 { background-color: #4b5563; }
+        .c-gy3 { background-color: #374151; }
+
+        /* Colores Fila 2 (Medios / Suaves) */
+        .c-m-gy1 { background-color: #9ca3af; }
+        .c-m-gy2 { background-color: #a1a1aa; }
+        .c-m-gy3 { background-color: #b45309; opacity: 0.3; }
+        .c-m-rd1 { background-color: #fca5a5; }
+        .c-m-rd2 { background-color: #f87171; }
+        .c-m-rd3 { background-color: #ef4444; opacity: 0.6; }
+        .c-m-bl1 { background-color: #93c5fd; }
+        .c-m-bl2 { background-color: #60a5fa; }
+        .c-m-bl3 { background-color: #818cf8; }
+        .c-m-pr1 { background-color: #a5b4fc; }
+        .c-m-pr2 { background-color: #818cf8; }
+        .c-m-pr3 { background-color: #c084fc; }
+        .c-m-gy4 { background-color: #d1d5db; }
+
+        /* Colores Fila 3 (Pastel / Claros) */
+        .c-l-gy { background-color: #f3f4f6; }
+        .c-l-rd { background-color: #fee2e2; }
+        .c-l-bl { background-color: #dbeafe; }
+        .c-l-pr { background-color: #e0e7ff; }
+
+        /* Mosaico Invertido para el Footer */
+        .mosaic-grid.inverted {
+            transform: rotate(180deg);
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-main {
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
         }
 
         .logo-img {
-            max-width: 260px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 1rem;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
-            transition: transform 0.3s ease;
+            max-height: 90px;
+            width: auto;
+            object-fit: contain;
         }
 
-        .logo-img:hover {
-            transform: scale(1.03);
-        }
-
-        header h1 {
+        .header-title h1 {
             font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
             letter-spacing: -0.5px;
         }
 
-        header p {
-            color: #e0e7ff;
-            font-size: 1.15rem;
-            font-weight: 300;
+        .header-title p {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
         }
 
         /* --- Contenedor Principal --- */
+        main {
+            flex: 1;
+        }
+
         .container {
-            max-width: 1050px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 2.5rem 1.5rem;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 1.8rem;
-            color: var(--primary-text);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--secondary-text);
-            margin-bottom: 2.5rem;
-        }
-
-        /* --- Grid de Servicios Animado --- */
+        /* --- Grid de Servicios --- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
 
         .card {
             background: var(--card-bg);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: fadeInUp 0.8s ease-out backwards;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Gradiente superior sutil en cada tarjeta */
-        .card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            border-radius: 12px;
+            padding: 1.75rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .card:hover::before {
-            opacity: 1;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .card-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 1.25rem;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #f3f4f6;
+            padding-bottom: 0.75rem;
         }
 
-        .card-icon {
-            font-size: 1.8rem;
-            background: var(--badge-bg);
-            padding: 10px;
-            border-radius: 12px;
-            display: inline-flex;
+        .card-title-group {
+            display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 10px;
         }
 
         .card h3 {
-            color: var(--primary-text);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .card-icon {
+            font-size: 1.6rem;
         }
 
         .card ul {
@@ -163,177 +194,287 @@
 
         .card ul li {
             position: relative;
-            padding-left: 1.4rem;
-            margin-bottom: 0.75rem;
-            color: var(--secondary-text);
-            font-size: 0.95rem;
+            padding-left: 1.25rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         .card ul li::before {
-            content: "✓";
-            color: var(--accent-blue);
+            content: "•";
+            color: #2563eb;
             font-weight: bold;
+            font-size: 1.2rem;
             position: absolute;
             left: 0;
+            top: -2px;
         }
 
-        /* --- Sección de Contacto Destacada --- */
-        .contact-section {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            margin-top: 3.5rem;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        /* --- Banner Inferior / Sistemas Compatibles --- */
+        .tech-banner {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        .contact-section h2 {
-            color: var(--primary-text);
+        .tech-badge {
             font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dark);
         }
 
-        .contact-section p {
-            color: var(--secondary-text);
-            margin-bottom: 1.5rem;
+        /* --- Banner de Contacto WhatsApp --- */
+        .cta-banner {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
         }
 
-        /* Botón animado con brillo */
+        .cta-banner h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
         .btn-whatsapp {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            justify-content: center;
+            gap: 12px;
+            background-color: var(--whatsapp-green);
             color: #ffffff;
-            padding: 0.9rem 2rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
             box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            margin-top: 0.5rem;
         }
 
         .btn-whatsapp:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            background-color: var(--whatsapp-hover);
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
         }
 
+        /* --- Footer --- */
         footer {
+            background: #ffffff;
+            margin-top: auto;
+        }
+
+        .footer-content {
             text-align: center;
-            padding: 2rem 1.5rem;
-            color: var(--secondary-text);
-            font-size: 0.9rem;
+            padding: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
-        /* Keyframes de Animaciones */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
+        /* Responsivo para celulares */
+        @media (max-width: 640px) {
+            .mosaic-grid {
+                grid-template-columns: repeat(9, 1fr);
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .header-main {
+                flex-direction: column;
+                text-align: center;
             }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
+            .brand-container {
+                flex-direction: column;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .btn-whatsapp {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.8rem;
+                width: 100%;
             }
         }
-
-        /* Retardo escalonado para la aparición de tarjetas */
-        .services-grid .card:nth-child(1) { animation-delay: 0.1s; }
-        .services-grid .card:nth-child(2) { animation-delay: 0.2s; }
-        .services-grid .card:nth-child(3) { animation-delay: 0.3s; }
-        .services-grid .card:nth-child(4) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
 
+    <!-- Encabezado con Cuadrícula Superior Mosaico -->
     <header>
-        <div class="header-content">
-            <!-- Recuerda cambiar 'flyer.png' por el nombre exacto de la imagen de tu logo si la subiste a GitHub -->
-            <img src="logo.png" alt="Sistemas FRC Logo" class="logo-img" onerror="this.style.display='none'">
-            
-            <p>¿Necesitas ayuda con la tecnología? Soy tu aliado en Informática</p>
+        <div class="mosaic-grid">
+            <!-- Fila 1 (Oscuros / Rojos / Azules / Púrpuras / Grises) -->
+            <div class="c-dk1"></div><div class="c-dk2"></div><div class="c-dk3"></div>
+            <div class="c-rd1"></div><div class="c-rd2"></div><div class="c-rd3"></div>
+            <div class="c-bl1"></div><div class="c-bl2"></div><div class="c-bl3"></div>
+            <div class="c-pr1"></div><div class="c-pr2"></div><div class="c-pr3"></div>
+            <div class="c-gy1"></div><div class="c-gy2"></div><div class="c-gy3"></div>
+            <div class="c-dk1"></div><div class="c-dk2"></div><div class="c-rd1"></div>
+
+            <!-- Fila 2 (Medios / Transición) -->
+            <div class="c-m-gy1"></div><div class="c-m-gy2"></div><div class="c-m-gy3"></div>
+            <div class="c-m-rd1"></div><div class="c-m-rd2"></div><div class="c-m-rd3"></div>
+            <div class="c-m-bl1"></div><div class="c-m-bl2"></div><div class="c-m-bl3"></div>
+            <div class="c-m-pr1"></div><div class="c-m-pr2"></div><div class="c-m-pr3"></div>
+            <div class="c-m-gy4"></div><div class="c-m-gy1"></div><div class="c-m-gy2"></div>
+            <div class="c-m-gy3"></div><div class="c-m-rd1"></div><div class="c-m-bl1"></div>
+
+            <!-- Fila 3 (Claros / Pastel) -->
+            <div class="c-l-gy"></div><div class="c-l-gy"></div><div class="c-l-gy"></div>
+            <div class="c-l-rd"></div><div class="c-l-rd"></div><div class="c-l-rd"></div>
+            <div class="c-l-bl"></div><div class="c-l-bl"></div><div class="c-l-bl"></div>
+            <div class="c-l-pr"></div><div class="c-l-pr"></div><div class="c-l-pr"></div>
+            <div class="c-l-gy"></div><div class="c-l-gy"></div><div class="c-l-gy"></div>
+            <div class="c-l-gy"></div><div class="c-l-rd"></div><div class="c-l-bl"></div>
+        </div>
+
+        <div class="header-main">
+            <div class="brand-container">
+                <img src="logo.png" alt="Sistemas FRC Logo" class="logo-img" onerror="this.onerror=null; this.src='Flyer Sistemasfrc.png';">
+            </div>
+            <div class="header-title">
+                <p>¿Necesitas ayuda con la tecnología?</p>
+            </div>
         </div>
     </header>
 
-    <div class="container">
-        <h2 class="section-title">Servicios Especializados</h2>
-        <p class="section-subtitle">Soluciones integrales de infraestructura, desarrollo y analítica de datos</p>
-        
+    <!-- Contenido Principal -->
+    <main class="container">
+
         <div class="services-grid">
+            
+            <!-- Soporte IT -->
             <div class="card">
                 <div class="card-header">
-                    <span class="card-icon">🛠️</span>
-                    <h3>Soporte IT</h3>
+                    <div class="card-title-group">
+                        <h3>Soporte IT</h3>
+                    </div>
+                    <span class="card-icon">🧰</span>
                 </div>
                 <ul>
-                    <li>Diagnóstico y reparación rápida de hardware</li>
-                    <li>Mantenimiento preventivo y correctivo</li>
-                    <li>Optimización y restauración de sistemas</li>
+                    <li>Diagnóstico y reparación rápida de hardware.</li>
+                    <li>Mantenimiento preventivo y correctivo.</li>
                 </ul>
             </div>
 
+            <!-- Networking -->
             <div class="card">
                 <div class="card-header">
-                    <span class="card-icon">🌐</span>
-                    <h3>Networking</h3>
+                    <div class="card-title-group">
+                        <h3>Networking</h3>
+                    </div>
+                    <span class="card-icon">☁️</span>
                 </div>
                 <ul>
-                    <li>Diseño, instalación y seguridad de redes</li>
-                    <li>Sistemas de videovigilancia y control</li>
-                    <li>Configuración de VLANs, DHCP y Firewalls</li>
+                    <li>Diseño, instalación y seguridad de redes.</li>
+                    <li>Sistemas de videovigilancia y control.</li>
                 </ul>
             </div>
 
+            <!-- Admin -->
             <div class="card">
                 <div class="card-header">
+                    <div class="card-title-group">
+                        <h3>Admin</h3>
+                    </div>
                     <span class="card-icon">🛡️</span>
-                    <h3>Admin & Cloud</h3>
                 </div>
                 <ul>
-                    <li>Gestión de servidores y Active Directory</li>
-                    <li>Copias de seguridad y optimización de entorno IT</li>
-                    <li>Migración, alojamiento y gestión segura de datos</li>
+                    <li>Gestión de servidores, Active Directory y copias de seguridad.</li>
+                    <li>Optimización del entorno IT.</li>
                 </ul>
             </div>
 
+            <!-- Data / BI -->
             <div class="card">
                 <div class="card-header">
-                    <span class="card-icon">📊</span>
-                    <h3>Data / BI</h3>
+                    <div class="card-title-group">
+                        <h3>Data/BI</h3>
+                    </div>
+                    <span class="card-icon">💡</span>
                 </div>
                 <ul>
-                    <li>Informes y dashboards avanzados en Power BI y Excel</li>
-                    <li>Modelado de datos y métricas DAX estratégicas</li>
-                    <li>Toma de decisiones basadas en datos reales</li>
+                    <li>Informes avanzados en Power BI y Excel.</li>
+                    <li>Decisiones estratégicas basadas en datos.</li>
                 </ul>
             </div>
+
+            <!-- Cloud / y Data Center -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-group">
+                        <h3>Cloud / y Data Center</h3>
+                    </div>
+                    <span class="card-icon">💻</span>
+                </div>
+                <ul>
+                    <li>Migración, alojamiento y gestión segura de datos.</li>
+                    <li>Escalabilidad y alta disponibilidad.</li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="contact-section">
-            <h2>¿Tienes un proyecto o requieres asistencia técnica?</h2>
-            <p>Atención directa y personalizada para tus equipos o empresa.</p>
-            <!-- Reemplaza el número 573144749916 por tu código de país + número si aplica -->
+        <!-- Tecnologías / Ecosistema -->
+        <div class="tech-banner">
+            <div class="tech-badge">🪟 Windows</div>
+            <div class="tech-badge">🐧 Linux</div>
+            <div class="tech-badge">🍎 macOS</div>
+            <div class="tech-badge">🧠 IA</div>
+        </div>
+
+        <!-- Llamado a la Acción Principal -->
+        <div class="cta-banner">
+            <h2>¡Soy tu aliado en Informática!</h2>
             <a href="https://wa.me/573144749916" class="btn-whatsapp" target="_blank">
-                📱 Contactar por WhatsApp: 314 474 9916
+                <span>📞</span> 314 474 9916
             </a>
         </div>
-    </div>
 
+    </main>
+
+    <!-- Pie de página con Mosaico Invertido -->
     <footer>
-        <p>&copy; 2026 Sistemas FRC - Todos los derechos reservados</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Sistemas FRC - Todos los derechos reservados</p>
+        </div>
+
+        <div class="mosaic-grid inverted">
+            <!-- Fila 1 -->
+            <div class="c-dk1"></div><div class="c-dk2"></div><div class="c-dk3"></div>
+            <div class="c-rd1"></div><div class="c-rd2"></div><div class="c-rd3"></div>
+            <div class="c-bl1"></div><div class="c-bl2"></div><div class="c-bl3"></div>
+            <div class="c-pr1"></div><div class="c-pr2"></div><div class="c-pr3"></div>
+            <div class="c-gy1"></div><div class="c-gy2"></div><div class="c-gy3"></div>
+            <div class="c-dk1"></div><div class="c-dk2"></div><div class="c-rd1"></div>
+
+            <!-- Fila 2 -->
+            <div class="c-m-gy1"></div><div class="c-m-gy2"></div><div class="c-m-gy3"></div>
+            <div class="c-m-rd1"></div><div class="c-m-rd2"></div><div class="c-m-rd3"></div>
+            <div class="c-m-bl1"></div><div class="c-m-bl2"></div><div class="c-m-bl3"></div>
+            <div class="c-m-pr1"></div><div class="c-m-pr2"></div><div class="c-m-pr3"></div>
+            <div class="c-m-gy4"></div><div class="c-m-gy1"></div><div class="c-m-gy2"></div>
+            <div class="c-m-gy3"></div><div class="c-m-rd1"></div><div class="c-m-bl1"></div>
+
+            <!-- Fila 3 -->
+            <div class="c-l-gy"></div><div class="c-l-gy"></div><div class="c-l-gy"></div>
+            <div class="c-l-rd"></div><div class="c-l-rd"></div><div class="c-l-rd"></div>
+            <div class="c-l-bl"></div><div class="c-l-bl"></div><div class="c-l-bl"></div>
+            <div class="c-l-pr"></div><div class="c-l-pr"></div><div class="c-l-pr"></div>
+            <div class="c-l-gy"></div><div class="c-l-gy"></div><div class="c-l-gy"></div>
+            <div class="c-l-gy"></div><div class="c-l-rd"></div><div class="c-l-bl"></div>
+        </div>
     </footer>
 
 </body>
